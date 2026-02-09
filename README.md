@@ -92,6 +92,8 @@ mychatbot/
 - Adjust the UI or add more features as you like!
 
 ---
+<img width="1918" height="951" alt="image" src="https://github.com/user-attachments/assets/d6f219ec-6292-4842-a5c9-27998c9d03b5" />
+
 
 ## License
 
