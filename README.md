@@ -308,6 +308,8 @@ Examples:
 - **Tool calling** – Let the LLM use external tools (search, calculator, etc.)
 
 ---
+<img width="1918" height="951" alt="image" src="https://github.com/user-attachments/assets/d6f219ec-6292-4842-a5c9-27998c9d03b5" />
+
 
 ## 🐛 Troubleshooting
 
