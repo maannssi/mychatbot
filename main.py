@@ -1,6 +1,6 @@
 import streamlit as st
-from langchain.chat_models import ChatOpenAI
-from langchain.schema import AIMessage, HumanMessage
+from langchain.chat_models import init_chat_model
+from langchain_core.messages import AIMessage, HumanMessage
 from dotenv import load_dotenv
 import os
 from uuid import uuid4
@@ -93,11 +93,15 @@ if user_input:
         st.session_state.current_chat = new_title
         chat_title = new_title
 
-    # LLM setup
-    chat = ChatOpenAI(
+    # LLM setup using LangChain's unified factory. We use the OpenAI-compatible
+    # endpoint (OpenRouter) but specify the model explicitly. We pass
+    # model_provider="openai" so the OpenAI integration (langchain-openai)
+    # is used while targeting OpenRouter via `openai_api_base`.
+    chat = init_chat_model(
+        model="mistralai/mistral-7b-instruct",
+        model_provider="openai",
         openai_api_base="https://openrouter.ai/api/v1",
         openai_api_key=api_key,
-        model="mistralai/mistral-7b-instruct",
     )
 
     with st.spinner("Thinking..."):

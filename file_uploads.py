@@ -1,7 +1,7 @@
 import streamlit as st
 import PyPDF2
 from PIL import Image
-from langchain.schema import HumanMessage
+from langchain_core.messages import HumanMessage
 
 def handle_pdf_upload(state, chat_title, messages):
     uploaded_pdfs = st.file_uploader("Upload PDF", type=["pdf"], accept_multiple_files=True, key="pdf")
